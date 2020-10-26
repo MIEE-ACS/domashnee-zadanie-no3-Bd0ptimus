@@ -116,10 +116,9 @@ namespace DZ3Fixed
         {
             Console.WriteLine("Score Loaded");
             int Score = Int32.Parse(ScoreValue.Text);
-            int NewScore = Score += 1;
+            int NewScore = Score + 1;
             Console.WriteLine("NewScore = {0}", NewScore);
             ScoreValue.Text = NewScore.ToString();
-
         }
 
 
@@ -138,6 +137,22 @@ namespace DZ3Fixed
             RightAnswer.Visibility = System.Windows.Visibility.Collapsed;
             WrongAnswer.Visibility = System.Windows.Visibility.Collapsed;
             tmr.Stop();
+        }
+
+        private void RightAnswerChecking()
+        {
+            int RightAnswerIndex = Int32.Parse(RightAnswersText.Text);
+            int NewRightAnswer = RightAnswerIndex + 1;
+            Console.WriteLine("New Correct Answer = {0}", NewRightAnswer);
+            RightAnswersText.Text = NewRightAnswer.ToString();
+        }
+
+        private void WrongAnswerChecking()
+        {
+            int WrongAnswerIndex = Int32.Parse(WrongAnswersText.Text);
+            int NewWrongAnswer = WrongAnswerIndex + 1;
+            Console.WriteLine("New Wrong Answer = {0}", NewWrongAnswer);
+            WrongAnswersText.Text = NewWrongAnswer.ToString();
         }
 
         //PressCheckBtn() - Check the answer
@@ -221,6 +236,7 @@ namespace DZ3Fixed
                 tmr.Tick += new EventHandler(SetCollaped);
                 tmr.Start();
                 Console.WriteLine("Right Answer");
+                RightAnswerChecking();
             }
             else if (CheckResult == false)
             {
@@ -230,8 +246,10 @@ namespace DZ3Fixed
                 tmr.Tick += new EventHandler(SetCollaped);
                 tmr.Start();
                 Console.WriteLine("Wrong Answer");
+                WrongAnswerChecking();
             }
             Page_Load(sender, e);
         }
+
     }
 }
