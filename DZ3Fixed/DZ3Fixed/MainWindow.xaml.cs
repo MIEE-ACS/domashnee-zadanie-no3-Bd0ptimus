@@ -83,7 +83,55 @@ namespace DZ3Fixed
             Number1_3.Text = num3.ToString();
         }
 
-        //SetContentBtn() - Create random Value for Radio button 
+        private int[] CheckContent(int[] Content, int ResultPos)
+        {
+            Random r = new Random();
+            int[] MediumContent = Content;
+            int Max = Content[0];
+            for (int i = 0; i < 4; i++)
+            {
+                if (Max < Content[i])
+                {
+                    Max = Content[i];
+                }
+            }
+
+            for (int i = 0; i < 4; i++)
+            {
+                if (i == (ResultPos - 1))
+                {
+                    continue;
+                }
+                else
+                {
+                    for (int j = 0; j < 4; j++)
+                    {
+                        if (i == j)
+                        {
+                            continue;
+                        }
+                        else 
+                        {
+                            if(Content[i] == MediumContent[j])
+                            {
+                                if (Content[i] == 99)
+                                {
+                                    Content[i] = r.Next(82, 98);
+                                }
+                                else
+                                {
+                                    Content[i] = r.Next(Max, 100);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            return Content;
+        }
+
+
+        //SetContentBtn() - Create random Value for Radiso button 
         //                - Make sure 1 in 4 Radio Button will have the Right Answer
         public void SetContentBtn()
         {
@@ -93,6 +141,7 @@ namespace DZ3Fixed
             Random r = new Random();
             int RanPosition = r.Next(1, 5);
             int[] SetContent = new int[4];
+            int[] ContentAfterChecking = new int[4];
             for (int i = 1; i <= 4; i++)
             {
                 if (i == RanPosition)
@@ -104,6 +153,7 @@ namespace DZ3Fixed
                     SetContent[i - 1] = r.Next(1, 100);
                 }
             }
+            ContentAfterChecking = CheckContent(SetContent, RanPosition);
             Console.WriteLine("Radio BTN 1:{0} 2:{1} 3:{2} 4:{3}", SetContent[0], SetContent[1], SetContent[2], SetContent[3]);
             RadioBtn1.Content = SetContent[0].ToString();
             RadioBtn2.Content = SetContent[1].ToString();
