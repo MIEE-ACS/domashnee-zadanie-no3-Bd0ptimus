@@ -110,7 +110,7 @@ namespace DZ3Fixed
             RadioBtn3.Content = SetContent[2].ToString();
             RadioBtn4.Content = SetContent[3].ToString();
         }
-
+        /*
         // Score() - Show Score. Each right answer, user will collect 1 score
         private void Score()
         {
@@ -120,8 +120,7 @@ namespace DZ3Fixed
             Console.WriteLine("NewScore = {0}", NewScore);
             ScoreValue.Text = NewScore.ToString();
         }
-
-
+        */
         private void Page_Load(object sender, System.EventArgs e)
         {
             Console.WriteLine("Page Loaded");
@@ -229,7 +228,7 @@ namespace DZ3Fixed
             //Show "Well done!" or "Oh! Let's try again" in 1400 miliseconds. After that, hide them for new question
             if (CheckResult == true)
             {
-                Score();
+                //Score();
                 Start.Visibility = System.Windows.Visibility.Collapsed;
                 RightAnswer.Visibility = System.Windows.Visibility.Visible;
                 tmr.Interval = 1400;

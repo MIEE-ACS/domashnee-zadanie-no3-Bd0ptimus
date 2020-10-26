@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DZ3.Properties
+namespace DZ3Fixed.Properties
 {
 
 

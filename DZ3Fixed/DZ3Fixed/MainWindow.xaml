@@ -39,8 +39,9 @@
             <Button  x:Name="CheckBtn" Content="Check" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="10,23,0,0" Click="PressCheckBtn" Cursor="Hand" RenderTransformOrigin="0.5,0.5" Background="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}" FontWeight="Bold" FontFamily="Proxy 1"/>
 
         </Grid>
-        <TextBox x:Name="ScoreValue" HorizontalAlignment="Left" Height="33" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="139" Margin="643,10,0,0" FontSize="18" FontWeight="Bold" TextAlignment="Center" TextChanged="Page_Load" Cursor="Hand" Background="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}" Grid.ColumnSpan="2" IsEnabled="False"/>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Score" VerticalAlignment="Top" Margin="563,11,0,0" Height="32" Width="75" FontSize="20" TextAlignment="Center" FontWeight="Bold" Cursor="Hand" FontFamily="Proxy 1" LineHeight="22" Grid.ColumnSpan="2"/>
+       
+        <!--<TextBox x:Name="ScoreValue" HorizontalAlignment="Left" Height="33" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="139" Margin="643,10,0,0" FontSize="18" FontWeight="Bold" TextAlignment="Center" TextChanged="Page_Load" Cursor="Hand" Background="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}" Grid.ColumnSpan="2" IsEnabled="False"/>-->
+        <!--<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Score" VerticalAlignment="Top" Margin="563,11,0,0" Height="32" Width="75" FontSize="20" TextAlignment="Center" FontWeight="Bold" Cursor="Hand" FontFamily="Proxy 1" LineHeight="22" Grid.ColumnSpan="2"/>-->
         <TextBlock x:Name="Start" FontSize="35" Grid.ColumnSpan="2" Margin="245,-7,281,386" IsEnabled="False" FontFamily="Swis721 Blk BT" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Let's Start" Width="268">
             <TextBlock.Triggers>
                 <EventTrigger  RoutedEvent="Window.Loaded">
@@ -61,11 +62,10 @@
         <TextBlock x:Name="RightAnswer" Visibility="Collapsed" FontSize="35" Grid.ColumnSpan="2" Margin="277,-7,308,386" IsEnabled="False" FontFamily="Swis721 Blk BT" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Well done!" Width="209">
         </TextBlock>
         <Grid Grid.ColumnSpan="2" Margin="10,299,522,10">
-            <TextBox x:Name="RightAnswersText" Text="0" HorizontalAlignment="Left" Height="33" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" Margin="115,10,0,0" FontSize="18" FontWeight="Bold" TextAlignment="Center" Cursor="Hand" Background="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}" Grid.ColumnSpan="1" IsEnabled="False"/>
-            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Correct Answers" VerticalAlignment="Top" Margin="2,10,0,0" Height="52" Width="108" TextAlignment="Center" FontWeight="Bold" Cursor="Hand" FontFamily="Proxy 1" LineHeight="22"/>
-            <TextBox x:Name="WrongAnswersText" Text="0" HorizontalAlignment="Left" Height="33" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" Margin="115,69,0,0" FontSize="18" FontWeight="Bold" TextAlignment="Center" Cursor="Hand" Background="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}" Grid.ColumnSpan="1" RenderTransformOrigin="0.46,1.818" IsEnabled="False"/>
-            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Wrong Answers" VerticalAlignment="Top" Margin="0,67,0,0" Height="45" Width="108" TextAlignment="Center" FontWeight="Bold" Cursor="Hand" FontFamily="Proxy 1" LineHeight="22"/>
+            <TextBox x:Name="RightAnswersText" Text="0" HorizontalAlignment="Left" Height="33" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" Margin="115,10,-254,0" FontSize="18" FontWeight="Bold" TextAlignment="Center" Cursor="Hand" Background="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}" Grid.ColumnSpan="1" IsEnabled="False" TextChanged="Page_Load" />
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Right Answers" VerticalAlignment="Top" Margin="2,10,-110,0" Height="33" Width="108" TextAlignment="Center" FontWeight="Bold" Cursor="Hand" FontFamily="Proxy 1" LineHeight="22"/>
+            <TextBox x:Name="WrongAnswersText" Text="0" HorizontalAlignment="Left" Height="33" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" Margin="115,60,0,0" FontSize="18" FontWeight="Bold" TextAlignment="Center" Cursor="Hand" Background="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}" Grid.ColumnSpan="1" RenderTransformOrigin="0.46,1.818" IsEnabled="False"/>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Wrong Answers" VerticalAlignment="Top" Margin="0,60,0,0" Height="45" Width="108" TextAlignment="Center" FontWeight="Bold" Cursor="Hand" FontFamily="Proxy 1" LineHeight="22"/>
         </Grid>
-
     </Grid>
 </Window>
